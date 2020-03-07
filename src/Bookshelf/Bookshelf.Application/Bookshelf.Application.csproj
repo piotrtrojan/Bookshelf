@@ -12,7 +12,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bookshelf.Contract\Bookshelf.Contract.csproj" />
+    <ProjectReference Include="..\Bookshelf.Repository\Bookshelf.Repository.csproj" />
     <ProjectReference Include="..\Bookshelf.Utils\Bookshelf.Utils.csproj" />
+    <ProjectReference Include="..\Bookshelf.WebContract\Bookshelf.WebContract.csproj" />
   </ItemGroup>
 
 </Project>

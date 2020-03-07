@@ -11,7 +11,8 @@ namespace Bookshelf.Authorization.Utils
         private static readonly string[] IgnoredRoutes = new string[]
         {
             "api/Token",
-            "api/IsTokenValid"
+            "api/IsTokenValid",
+            "api/Register", // TODO: Update it. When endpoint has AllowAnonymous attribute, it can be skipped.
         };
 
         public static void ValidateEndpointsPolicies(IActionDescriptorCollectionProvider actionDescriptorCollectionProvider)

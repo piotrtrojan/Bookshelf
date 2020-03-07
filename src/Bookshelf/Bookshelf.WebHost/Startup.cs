@@ -1,5 +1,6 @@
 using Bookshelf.Application;
 using Bookshelf.Authorization;
+using Bookshelf.Authorization.Identity;
 using Bookshelf.Authorization.Utils;
 using Bookshelf.Repository;
 using Bookshelf.Repository.Context;
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Text;
@@ -56,7 +58,7 @@ namespace Bookshelf.WebHost
 
             services.RegisterRepositories();
 
-            services.AddIdentity<IdentityUser, IdentityRole>(
+            services.AddIdentity<BookshelfIdentityUser, IdentityRole<Guid>>(
                 config =>
                 {
                     config.Password.RequireDigit = false;

@@ -14,6 +14,7 @@ namespace Bookshelf.Repository.Context
         public BookshelfDbContext(string connectionString)
         {
             this.connectionString = connectionString;
+            this.Database.EnsureCreated(); // TODO: Just for the first time, later we should use SQL project.
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

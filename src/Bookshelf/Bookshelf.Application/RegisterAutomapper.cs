@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using Bookshelf.Application.User.Command;
+using Bookshelf.WebContract.Auth.Request;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Bookshelf.Application
 {
@@ -15,6 +18,12 @@ namespace Bookshelf.Application
     {
         public ApplicationAutomapperProfile()
         {
+            RegisterAuth();
+        }
+
+        private void RegisterAuth()
+        {
+            CreateMap<RegisterRequest, CreateAccountCommand>();
         }
     }
 }

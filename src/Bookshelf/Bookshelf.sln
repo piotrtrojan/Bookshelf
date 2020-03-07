@@ -3,23 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.Application", "Bookshelf.Application\Bookshelf.Application.csproj", "{0AB52311-F2F3-4455-A8C5-479043947343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.Application", "Bookshelf.Application\Bookshelf.Application.csproj", "{0AB52311-F2F3-4455-A8C5-479043947343}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.Model", "Bookshelf.Model\Bookshelf.Model.csproj", "{F258627D-2A2D-4793-AFAA-B9D23788AE3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.Model", "Bookshelf.Model\Bookshelf.Model.csproj", "{F258627D-2A2D-4793-AFAA-B9D23788AE3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.Repository", "Bookshelf.Repository\Bookshelf.Repository.csproj", "{E12871F0-5298-4AAA-984D-4A6049E13CEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.Repository", "Bookshelf.Repository\Bookshelf.Repository.csproj", "{E12871F0-5298-4AAA-984D-4A6049E13CEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.WebContract", "Bookshelf.WebContract\Bookshelf.WebContract.csproj", "{5EB7C6A4-451F-4421-ACD9-634573F18CD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.WebContract", "Bookshelf.WebContract\Bookshelf.WebContract.csproj", "{5EB7C6A4-451F-4421-ACD9-634573F18CD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.Validator", "Bookshelf.Validator\Bookshelf.Validator.csproj", "{6272FB64-A9EB-4820-8AA9-FB6CF897ACB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.Validator", "Bookshelf.Validator\Bookshelf.Validator.csproj", "{6272FB64-A9EB-4820-8AA9-FB6CF897ACB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.WebHost", "Bookshelf.WebHost\Bookshelf.WebHost.csproj", "{1F65C301-181B-48D1-A1CF-101D1DCD6007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.WebHost", "Bookshelf.WebHost\Bookshelf.WebHost.csproj", "{1F65C301-181B-48D1-A1CF-101D1DCD6007}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.Utils", "Bookshelf.Utils\Bookshelf.Utils.csproj", "{249D419B-49A4-4FFA-8F2D-7A99FB93EB80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.Utils", "Bookshelf.Utils\Bookshelf.Utils.csproj", "{249D419B-49A4-4FFA-8F2D-7A99FB93EB80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.Contract", "Bookshelf.Contract\Bookshelf.Contract.csproj", "{AE2BFDB9-683B-4891-8979-B4562252E697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.Contract", "Bookshelf.Contract\Bookshelf.Contract.csproj", "{AE2BFDB9-683B-4891-8979-B4562252E697}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshelf.Authorization", "Bookshelf.Authorization\Bookshelf.Authorization.csproj", "{9384DDC7-FBDA-4DFA-9E9C-678BB65C94EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshelf.Authorization", "Bookshelf.Authorization\Bookshelf.Authorization.csproj", "{9384DDC7-FBDA-4DFA-9E9C-678BB65C94EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{F1D9FE9A-CE0B-4361-A3EE-A66C5BD48A26}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Bookshelf.Database", "Bookshelf.Database\Bookshelf.Database.sqlproj", "{C1D6BE62-480C-4C34-8AD0-0E2D64EE5583}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Bookshelf.AuthDatabase", "Bookshelf.AuthDatabase\Bookshelf.AuthDatabase.sqlproj", "{B6F16371-62E1-4A7D-B13D-3CE9D531412E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,9 +69,25 @@ Global
 		{9384DDC7-FBDA-4DFA-9E9C-678BB65C94EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9384DDC7-FBDA-4DFA-9E9C-678BB65C94EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9384DDC7-FBDA-4DFA-9E9C-678BB65C94EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D6BE62-480C-4C34-8AD0-0E2D64EE5583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D6BE62-480C-4C34-8AD0-0E2D64EE5583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D6BE62-480C-4C34-8AD0-0E2D64EE5583}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C1D6BE62-480C-4C34-8AD0-0E2D64EE5583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D6BE62-480C-4C34-8AD0-0E2D64EE5583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D6BE62-480C-4C34-8AD0-0E2D64EE5583}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B6F16371-62E1-4A7D-B13D-3CE9D531412E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F16371-62E1-4A7D-B13D-3CE9D531412E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F16371-62E1-4A7D-B13D-3CE9D531412E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B6F16371-62E1-4A7D-B13D-3CE9D531412E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F16371-62E1-4A7D-B13D-3CE9D531412E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F16371-62E1-4A7D-B13D-3CE9D531412E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1D6BE62-480C-4C34-8AD0-0E2D64EE5583} = {F1D9FE9A-CE0B-4361-A3EE-A66C5BD48A26}
+		{B6F16371-62E1-4A7D-B13D-3CE9D531412E} = {F1D9FE9A-CE0B-4361-A3EE-A66C5BD48A26}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {403E35AF-C45F-41C6-8C04-2C144C0290ED}

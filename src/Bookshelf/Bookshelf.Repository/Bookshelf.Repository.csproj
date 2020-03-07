@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bookshelf.Authorization\Bookshelf.Authorization.csproj" />
     <ProjectReference Include="..\Bookshelf.Model\Bookshelf.Model.csproj" />
     <ProjectReference Include="..\Bookshelf.Utils\Bookshelf.Utils.csproj" />
   </ItemGroup>

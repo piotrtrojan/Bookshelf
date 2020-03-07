@@ -1,11 +1,14 @@
-﻿using Bookshelf.Utils;
+﻿using Bookshelf.Authorization.Identity;
+using Bookshelf.Utils;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace Bookshelf.Repository.Context
 {
-    public class AuthDbContext : IdentityDbContext
+    public class AuthDbContext : IdentityDbContext<BookshelfIdentityUser, IdentityRole<Guid>, Guid>
     {
         private readonly GlobalConfig _config;
 

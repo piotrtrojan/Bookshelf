@@ -1,4 +1,5 @@
 ﻿using Bookshelf.Authorization.Exceptions;
+using Bookshelf.Authorization.Identity;
 using Bookshelf.Authorization.Interfaces;
 using Bookshelf.Utils;
 using Microsoft.AspNetCore.Identity;
@@ -10,16 +11,17 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 
-namespace Bookshelf.Authorization
+namespace Bookshelf.Authorization.Services
 {
     public class TokenService : ITokenService
     {
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly UserManager<BookshelfIdentityUser> userManager;
+        private readonly SignInManager<BookshelfIdentityUser> signInManager;
         private readonly GlobalConfig globalConfig;
 
-        public TokenService(UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+        public TokenService(
+            UserManager<BookshelfIdentityUser> userManager,
+            SignInManager<BookshelfIdentityUser> signInManager,
             GlobalConfig globalConfig)
         {
             this.userManager = userManager;
@@ -47,11 +49,12 @@ namespace Bookshelf.Authorization
             return signInManager.CanSignInAsync(identityUser).Result;
         }
 
-        protected object GenerateJwtToken(IdentityUser identityUser)
+        protected object GenerateJwtToken(BookshelfIdentityUser identityUser)
         {
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Sub, identityUser.Id),
+                new Claim(JwtRegisteredClaimNames.Jti, identityUser.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Sub, identityUser.IdInApplication.ToString())
             };
 
             var roles = userManager.GetRolesAsync(identityUser).Result;

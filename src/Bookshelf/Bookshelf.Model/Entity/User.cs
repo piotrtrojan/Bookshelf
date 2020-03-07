@@ -8,6 +8,7 @@ namespace Bookshelf.Model.Entity
         public Guid AspNetGuid { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Email { get; set; }
         public int CardId { get; set; }
 
     }

@@ -4,6 +4,95 @@
         <name>Bookshelf.WebHost</name>
     </assembly>
     <members>
+        <member name="T:Bookshelf.WebHost.Controllers.AuthController">
+            <summary>
+            Controller containig endpoints related to token issuing and validating.
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.AuthController.#ctor(Bookshelf.Authorization.Interfaces.ITokenService,Bookshelf.Authorization.Interfaces.IRegisterService,Bookshelf.Utils.AppExecutor,AutoMapper.IMapper)">
+            <summary>
+            Instantiates AuthController
+            </summary>
+            <param name="tokenService"></param>
+            <param name="registerService"></param>
+            <param name="appExecutor"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.AuthController.GetToken(Bookshelf.WebContract.Auth.Request.LoginRequest)">
+            <summary>
+            Generates Bearer token based on email and password. 
+            Token contains account roles (if any assigned).
+            </summary>
+            <param name="request"><see cref="T:Bookshelf.WebContract.Auth.Request.LoginRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.AuthController.IsTokenValid">
+            <summary>
+            Validates if token is valid.
+            If everything is ok it returns 200, when token is invalid or account cannot sign in (e.g. is blocked) - returns 403.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.AuthController.RegisterAsync(Bookshelf.WebContract.Auth.Request.RegisterRequest)">
+            <summary>
+            Registers new user.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController">
+            <summary>
+            Base class for all controllers. Contains method to handle CommandResults and QueryResults.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController.CurrentAccountGuid">
+            <summary>
+            Returns GUID of currently logged used, based on its JWT token.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController.CurrentAccountRoles">
+            <summary>
+            Returns list of roles assigned to currently logged used.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController.CurrentAccountId">
+            <summary>
+            Returns id of currently logged account. Id is retrieved from DB based on account GUID stored in JWT token.
+            </summary>
+        </member>
+        <member name="F:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController.appExecutor">
+            <summary>
+            Instance of AppExecutor. Dispatech Queries and Commands to execute.
+            </summary>
+        </member>
+        <member name="F:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController.mapper">
+            <summary>
+            Instance of IMapper. Used to map/cast commands, request, reults etc.
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController.#ctor(Bookshelf.Utils.AppExecutor,AutoMapper.IMapper)">
+            <summary>
+            Instantiates LegeArtisBaseController.
+            </summary>
+            <param name="executor"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController.HandleCommandResult(Bookshelf.Contract.Base.CommandResult)">
+            <summary>
+            Handles Command result. If Command is successful returns NoContent, otherwise - returns BadRequest.
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController.HandleQueryResult``1(``0)">
+            <summary>
+            Handles Query results. 
+            Determines if result is collection or single element and executes proper method.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
         <member name="T:Bookshelf.WebHost.Extensions.IServiceCollectionEndpointPoliciesExtensions">
             <summary>
             Contains extensions of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection">IServiceCollection</see> to add Authorization and to register
