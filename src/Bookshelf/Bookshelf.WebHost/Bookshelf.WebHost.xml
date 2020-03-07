@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bookshelf.WebHost</name>
+    </assembly>
+    <members>
+        <member name="T:Bookshelf.WebHost.Extensions.IServiceCollectionEndpointPoliciesExtensions">
+            <summary>
+            Contains extensions of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection">IServiceCollection</see> to add Authorization and to register
+            Authorization Polices based on roles.
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Extensions.IServiceCollectionEndpointPoliciesExtensions.RegisterAuthorizationPolicies(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers Authorization.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bookshelf.WebHost.Extensions.IServiceCollectionSwaggerExtensions">
+            <summary>
+            Contains extensions of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection">IServiceCollection</see> to register Swagger
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Extensions.IServiceCollectionSwaggerExtensions.RegisterSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers Swagger.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bookshelf.WebHost.Program">
+            <summary>
+            Main Application class.
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Program.Main">
+            <summary>
+            Application entry point.
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Prepares IHostBuilder object using Startup configuration.
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Bookshelf.WebHost.Startup">
+            <summary>
+            WebHost configuration class.
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Instatiates Startup class.
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Bookshelf.WebHost.Startup.Configuration">
+            <summary>
+            Contains all configuration (json files, environment, app arguments).
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Register services in IoC container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Bookshelf.WebHost.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Bookshelf.Utils.GlobalConfig,Microsoft.AspNetCore.Mvc.Infrastructure.IActionDescriptorCollectionProvider)">
+            <summary>
+            This method gets called by the runtime.
+            Configures HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="config"></param>
+            <param name="actionDescriptorCollectionProvider"></param>
+        </member>
+    </members>
+</doc>

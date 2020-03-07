@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\GIT\Bookshelf\src\Bookshelf\Bookshelf.WebHost\Bookshelf.WebHost.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bookshelf.Application\Bookshelf.Application.csproj" />
+    <ProjectReference Include="..\Bookshelf.Authorization\Bookshelf.Authorization.csproj" />
+    <ProjectReference Include="..\Bookshelf.Repository\Bookshelf.Repository.csproj" />
+    <ProjectReference Include="..\Bookshelf.Utils\Bookshelf.Utils.csproj" />
+    <ProjectReference Include="..\Bookshelf.Validator\Bookshelf.Validator.csproj" />
+    <ProjectReference Include="..\Bookshelf.WebContract\Bookshelf.WebContract.csproj" />
+  </ItemGroup>
+
+
+</Project>
