@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using Bookshelf.Application.Author.Command;
 using Bookshelf.Application.User.Command;
 using Bookshelf.WebContract.Auth.Request;
+using Bookshelf.WebContract.Author.Request;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Bookshelf.Application
 {
@@ -18,6 +21,13 @@ namespace Bookshelf.Application
         public ApplicationAutomapperProfile()
         {
             RegisterAuth();
+            RegisterAuthor();
+        }
+
+        private void RegisterAuthor()
+        {
+            CreateMap<CreateAuthorRequest, CreateAuthorCommand>();
+            CreateMap<CreateAuthorCommand, Model.Entity.Author>();
         }
 
         private void RegisterAuth()

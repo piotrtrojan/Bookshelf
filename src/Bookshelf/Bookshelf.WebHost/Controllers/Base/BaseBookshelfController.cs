@@ -2,12 +2,14 @@
 using Bookshelf.Authorization.Enum;
 using Bookshelf.Contract.Base;
 using Bookshelf.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 
 namespace Bookshelf.WebHost.Controllers.Base
@@ -16,6 +18,7 @@ namespace Bookshelf.WebHost.Controllers.Base
     /// Base class for all controllers. Contains method to handle CommandResults and QueryResults.
     /// </summary>
     [ApiController]
+    [Authorize]
     public class BaseBookshelfController : ControllerBase
     {
 

@@ -1,13 +1,13 @@
-﻿using Bookshelf.Model.Entity.Base;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace Bookshelf.Model.Entity
+namespace Bookshelf.WebContract.Author.Request
 {
-    public class Author : BaseEntity
+    public class CreateAuthorRequest
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Nationality { get; set; }
-        public ICollection<Book> Books { get; set; }
     }
 }

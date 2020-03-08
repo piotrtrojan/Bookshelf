@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Bookshelf.Validator.Filter;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,8 @@ namespace Bookshelf.WebHost.Extensions
                     }
                 };
 
-                c.IncludeXmlComments(GetSwaggerXmlCommentsPath());
+                c.IncludeXmlComments(GetSwaggerControllersXmlCommentsPath());
+                c.IncludeXmlComments(GetSwaggerWebContractXmlCommentsPath());
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
@@ -60,10 +62,18 @@ namespace Bookshelf.WebHost.Extensions
                     Scheme = "Bearer"
                 });
                 c.AddSecurityRequirement(security);
+                c.SchemaFilter<AddFluentValidationRules>();
             });
         }
 
-        private static string GetSwaggerXmlCommentsPath()
+        private static string GetSwaggerWebContractXmlCommentsPath()
+        {
+            var app = AppContext.BaseDirectory;
+            var assemblyDocumentation = "Bookshelf.WebContract.xml"; // In the future, there may be more fancy way to resolve that name.
+            return System.IO.Path.Combine(app, assemblyDocumentation);
+        }
+
+        private static string GetSwaggerControllersXmlCommentsPath()
         {
             var app = AppContext.BaseDirectory;
             var assemblyDocumentation = System.Reflection.Assembly.GetExecutingAssembly().ManifestModule.Name.Replace(".dll", ".xml");
