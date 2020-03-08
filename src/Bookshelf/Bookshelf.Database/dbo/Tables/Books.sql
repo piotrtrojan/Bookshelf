@@ -7,9 +7,12 @@
     [AuthorId]         INT            NOT NULL,
     [Title]            NVARCHAR (MAX) NULL,
     [Pages]            INT            NOT NULL,
+    [MaxLoanDays]      INT            NULL,
     CONSTRAINT [PK_Books] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Books_Authors_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [dbo].[Authors] ([Id]) ON DELETE CASCADE
 );
+
+
 
 
 GO

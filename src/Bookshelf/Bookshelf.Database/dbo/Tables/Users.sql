@@ -7,8 +7,10 @@
     [AspNetGuid]       UNIQUEIDENTIFIER NOT NULL,
     [FirstName]        NVARCHAR (MAX)   NULL,
     [LastName]         NVARCHAR (MAX)   NULL,
-    [Email]            NVARCHAR(MAX)    NOT NULL, 
+    [Email]            NVARCHAR (MAX)   NULL,
     [CardId]           INT              NOT NULL,
     CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+
 

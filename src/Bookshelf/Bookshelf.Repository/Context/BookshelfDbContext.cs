@@ -7,18 +7,32 @@ namespace Bookshelf.Repository.Context
     {
         private readonly string connectionString;
 
-        public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<BookTag> BookTags { get; set; }
+        public DbSet<Loan> Loans { get; set; }
+        public DbSet<Piece> Pieces { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
         public DbSet<User> Users { get; set; }
 
         public BookshelfDbContext(string connectionString)
         {
             this.connectionString = connectionString;
-            this.Database.EnsureCreated(); // TODO: Just for the first time, later we should use SQL project.
+            this.Database.EnsureCreated();
         }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectionString, o => o.CommandTimeout(180));
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<BookTag>(eb =>
+            {
+                eb.HasIndex(q => q.Value);
+            });
         }
     }
 }

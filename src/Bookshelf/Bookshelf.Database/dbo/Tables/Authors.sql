@@ -6,6 +6,9 @@
     [DeletedAt]        DATETIME2 (7)  NULL,
     [FirstName]        NVARCHAR (MAX) NULL,
     [LastName]         NVARCHAR (MAX) NULL,
+    [Country]          NVARCHAR (MAX) NULL,
     CONSTRAINT [PK_Authors] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+
 

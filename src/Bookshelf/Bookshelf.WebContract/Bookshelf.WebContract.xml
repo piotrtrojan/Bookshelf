@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bookshelf.WebContract</name>
+    </assembly>
+    <members>
+        <member name="T:Bookshelf.WebContract.Auth.Request.LoginRequest">
+            <summary>
+            Request for login (new token request).
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Auth.Request.LoginRequest.Email">
+            <summary>
+            User email.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Auth.Request.LoginRequest.Password">
+            <summary>
+            User password.
+            </summary>
+        </member>
+        <member name="T:Bookshelf.WebContract.Auth.Request.RegisterRequest">
+            <summary>
+            Request for registering new user.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Auth.Request.RegisterRequest.Email">
+            <summary>
+            New user email address.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Auth.Request.RegisterRequest.Password">
+            <summary>
+            New user password.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Auth.Request.RegisterRequest.FirstName">
+            <summary>
+            New user first name.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Auth.Request.RegisterRequest.LastName">
+            <summary>
+            New user last name.
+            </summary>
+        </member>
+    </members>
+</doc>
