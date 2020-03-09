@@ -1,7 +1,7 @@
 ﻿namespace Bookshelf.WebContract.Auth.Request
 {
     /// <summary>
-    /// Request for registering new user.
+    /// DTO for registering new user.
     /// </summary>
     public class RegisterRequest
     {

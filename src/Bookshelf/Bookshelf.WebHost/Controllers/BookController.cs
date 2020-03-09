@@ -10,14 +10,25 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bookshelf.WebHost.Controllers
 {
+    /// <summary>
+    /// Controller containing methods connected with Books.
+    /// </summary>
     [Route("api/Book")]
     public class BookController : BaseBookshelfController
     {
+        /// <summary>
+        /// Instantiates BookController.
+        /// </summary>
+        /// <param name="appExecutor"></param>
+        /// <param name="mapper"></param>
         public BookController(AppExecutor appExecutor, IMapper mapper) : base(appExecutor, mapper)
-        {
+        {}
 
-        }
-
+        /// <summary>
+        /// Creates new book
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost("")]
         [RoleAuthorize(RoleType.Root)]
         public IActionResult CreateBook(CreateBookRequest request)
@@ -27,6 +38,11 @@ namespace Bookshelf.WebHost.Controllers
             return HandleCommandResult(appExecutor.Dispatch(command));
         }
 
+        /// <summary>
+        /// Returns single book by its identifier.
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
         [HttpGet("{bookId}")]
         [RoleAuthorize(RoleType.Account)]
         public IActionResult GetBookById(int bookId)

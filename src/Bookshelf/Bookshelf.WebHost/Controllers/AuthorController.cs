@@ -13,14 +13,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bookshelf.WebHost.Controllers
 {
+    /// <summary>
+    /// Controller containing methods connected with Authors.
+    /// </summary>
     [Route("api/Author")]
     public class AuthorController : BaseBookshelfController
     {
+        /// <summary>
+        /// Instantiates AuthorController.
+        /// </summary>
+        /// <param name="appExecutor"></param>
+        /// <param name="mapper"></param>
         public AuthorController(AppExecutor appExecutor, IMapper mapper) : base(appExecutor, mapper)
         {
 
         }
 
+        /// <summary>
+        /// Returns single author by its identifier.
+        /// </summary>
+        /// <param name="authorId"></param>
+        /// <returns></returns>
         [HttpGet("{authorId}")]
         [RoleAuthorize(RoleType.Account)]
         public IActionResult GetAuthorById(int authorId)
@@ -28,6 +41,12 @@ namespace Bookshelf.WebHost.Controllers
             return HandleQueryResult(appExecutor.Dispatch(new GetAuthorByIdQuery { AuthorId = authorId }));
         }
 
+        /// <summary>
+        /// Returns list of books assigned to given author.
+        /// </summary>
+        /// <param name="authorId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet("{authorId}/Books")]
         [RoleAuthorize(RoleType.Account)]
         public IActionResult GetBooksByAuthor(int authorId, [FromQuery] GetBooksByAuthorRequest request)
@@ -38,6 +57,12 @@ namespace Bookshelf.WebHost.Controllers
             return HandleQueryResult(appExecutor.Dispatch(query));
         }
 
+
+        /// <summary>
+        /// Creates new author.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost("")]
         [RoleAuthorize(RoleType.Root)]
         public IActionResult CreateAuthor(CreateAuthorRequest request)

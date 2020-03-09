@@ -1,7 +1,7 @@
 ﻿namespace Bookshelf.WebContract.Auth.Request
 {
     /// <summary>
-    /// Request for login (new token request).
+    /// DTO for login request (new token request).
     /// </summary>
     public class LoginRequest
     {
