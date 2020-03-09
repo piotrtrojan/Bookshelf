@@ -51,7 +51,7 @@ namespace Bookshelf.WebHost.Controllers
         [RoleAuthorize(RoleType.Account)]
         public IActionResult GetBooksByAuthor(int authorId, [FromQuery] GetBooksByAuthorRequest request)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
             var query = mapper.Map<GetBooksByAuthorQuery>(request);
             query.AuthorId = authorId;
             return HandleQueryResult(appExecutor.Dispatch(query));

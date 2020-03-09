@@ -1,10 +1,6 @@
-using Bookshelf.Application.Book.Query;
-using Bookshelf.Application.BookTag;
-using Bookshelf.Application.BookTag.Query;
 using Bookshelf.Application.Nationality.Query;
 using Bookshelf.Contract.Base;
 using Bookshelf.Utils;
-using Bookshelf.WebContract.Book.Response;
 using Dapper;
 using Microsoft.Data.SqlClient;
 

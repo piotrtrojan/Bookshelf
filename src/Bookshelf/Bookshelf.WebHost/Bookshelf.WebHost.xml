@@ -40,6 +40,40 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="T:Bookshelf.WebHost.Controllers.AuthorController">
+            <summary>
+            Controller containing methods connected with Authors.
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.AuthorController.#ctor(Bookshelf.Utils.AppExecutor,AutoMapper.IMapper)">
+            <summary>
+            Instantiates AuthorController.
+            </summary>
+            <param name="appExecutor"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.AuthorController.GetAuthorById(System.Int32)">
+            <summary>
+            Returns single author by its identifier.
+            </summary>
+            <param name="authorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.AuthorController.GetBooksByAuthor(System.Int32,Bookshelf.WebContract.Book.Request.GetBooksByAuthorRequest)">
+            <summary>
+            Returns list of books assigned to given author.
+            </summary>
+            <param name="authorId"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.AuthorController.CreateAuthor(Bookshelf.WebContract.Author.Request.CreateAuthorRequest)">
+            <summary>
+            Creates new author.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="T:Bookshelf.WebHost.Controllers.Base.BaseBookshelfController">
             <summary>
             Base class for all controllers. Contains method to handle CommandResults and QueryResults.
@@ -91,6 +125,32 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Bookshelf.WebHost.Controllers.BookController">
+            <summary>
+            Controller containing methods connected with Books.
+            </summary>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.BookController.#ctor(Bookshelf.Utils.AppExecutor,AutoMapper.IMapper)">
+            <summary>
+            Instantiates BookController.
+            </summary>
+            <param name="appExecutor"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.BookController.CreateBook(Bookshelf.WebContract.Book.Request.CreateBookRequest)">
+            <summary>
+            Creates new book
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bookshelf.WebHost.Controllers.BookController.GetBookById(System.Int32)">
+            <summary>
+            Returns single book by its identifier.
+            </summary>
+            <param name="bookId"></param>
             <returns></returns>
         </member>
         <member name="T:Bookshelf.WebHost.Extensions.IServiceCollectionEndpointPoliciesExtensions">

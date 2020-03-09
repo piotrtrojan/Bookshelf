@@ -1,7 +1,5 @@
 using Bookshelf.Contract.Base;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Bookshelf.Application.Book.Command
 {

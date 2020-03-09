@@ -74,6 +74,9 @@
     <None Include="MasterData\Users.sql" />
     <None Include="LocalDb.publish.xml" />
     <None Include="MasterData\Nationalities.sql" />
+    <None Include="MasterData\Authors.sql" />
+    <None Include="MasterData\Books.sql" />
+    <None Include="MasterData\BookTags.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="MasterData.sql" />

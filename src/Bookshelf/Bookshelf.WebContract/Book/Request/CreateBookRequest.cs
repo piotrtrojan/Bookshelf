@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Bookshelf.WebContract.Book.Request
 {
     /// <summary>

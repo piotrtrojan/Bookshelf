@@ -1,6 +1,6 @@
 ﻿namespace Bookshelf.Contract.Base
 {
-    public interface IQuery<TResult>
+    public interface IQuery<out TResult>
     {
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Bookshelf.WebContract.Author.Request
+﻿namespace Bookshelf.WebContract.Author.Request
 {
     /// <summary>
     /// DTO for creating new Author

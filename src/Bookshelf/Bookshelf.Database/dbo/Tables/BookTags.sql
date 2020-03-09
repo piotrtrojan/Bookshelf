@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[BookTags] (
     [Id]     INT            IDENTITY (1, 1) NOT NULL,
     [BookId] INT            NOT NULL,
-    [BookTags]  NVARCHAR (450) NULL,
+    [Tag]    NVARCHAR (450) NULL,
     CONSTRAINT [PK_BookTags] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_BookTags_Books_BookId] FOREIGN KEY ([BookId]) REFERENCES [dbo].[Books] ([Id]) ON DELETE CASCADE
 );

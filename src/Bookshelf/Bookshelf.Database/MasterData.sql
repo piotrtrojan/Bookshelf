@@ -12,3 +12,6 @@ Post-Deployment Script Template
 
 :r .\MasterData\Nationalities.sql
 :r .\MasterData\Users.sql
+:r .\MasterData\Authors.sql
+:r .\MasterData\Books.sql
+:r .\MasterData\BookTags.sql

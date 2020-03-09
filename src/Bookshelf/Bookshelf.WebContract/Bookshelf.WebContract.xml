@@ -4,9 +4,54 @@
         <name>Bookshelf.WebContract</name>
     </assembly>
     <members>
+        <member name="T:Bookshelf.WebContract.Author.Request.CreateAuthorRequest">
+            <summary>
+            DTO for creating new Author
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Author.Request.CreateAuthorRequest.FirstName">
+            <summary>
+            New author first name.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Author.Request.CreateAuthorRequest.LastName">
+            <summary>
+            New author last name.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Author.Request.CreateAuthorRequest.Nationality">
+            <summary>
+            New author nationality.
+            </summary>
+        </member>
+        <member name="T:Bookshelf.WebContract.Author.Response.GetAuthorByIdResponse">
+            <summary>
+            Response DTO containing single author.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Author.Response.GetAuthorByIdResponse.Id">
+            <summary>
+            Author's id.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Author.Response.GetAuthorByIdResponse.FirstName">
+            <summary>
+            Author's first name. 
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Author.Response.GetAuthorByIdResponse.LastName">
+            <summary>
+            Author's last name.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Author.Response.GetAuthorByIdResponse.NationalityId">
+            <summary>
+            Author's nationality id.
+            </summary>
+        </member>
         <member name="T:Bookshelf.WebContract.Auth.Request.LoginRequest">
             <summary>
-            Request for login (new token request).
+            DTO for login request (new token request).
             </summary>
         </member>
         <member name="P:Bookshelf.WebContract.Auth.Request.LoginRequest.Email">
@@ -21,7 +66,7 @@
         </member>
         <member name="T:Bookshelf.WebContract.Auth.Request.RegisterRequest">
             <summary>
-            Request for registering new user.
+            DTO for registering new user.
             </summary>
         </member>
         <member name="P:Bookshelf.WebContract.Auth.Request.RegisterRequest.Email">
@@ -42,6 +87,91 @@
         <member name="P:Bookshelf.WebContract.Auth.Request.RegisterRequest.LastName">
             <summary>
             New user last name.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Auth.Request.RegisterRequest.Nationality">
+            <summary>
+            New user nationality
+            </summary>
+        </member>
+        <member name="T:Bookshelf.WebContract.BookTag.Response.BookTagResponse">
+            <summary>
+            Response DTO containing tag name and it's id.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.BookTag.Response.BookTagResponse.Id">
+            <summary>
+            Tag id
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.BookTag.Response.BookTagResponse.Tag">
+            <summary>
+            Tag value (text).
+            </summary>
+        </member>
+        <member name="T:Bookshelf.WebContract.Book.Request.CreateBookRequest">
+            <summary>
+            DTO for creating new book.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Request.CreateBookRequest.AuthorId">
+            <summary>
+            New book's author id.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Request.CreateBookRequest.Title">
+            <summary>
+            New book's title.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Request.CreateBookRequest.Pages">
+            <summary>
+            New book's number of pages.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Request.CreateBookRequest.MaxLoanDays">
+            <summary>
+            Max days of loaning for a book. Can be also specified by pieces.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Request.CreateBookRequest.BookTags">
+            <summary>
+            List of tags to be added to the new book.
+            </summary>
+        </member>
+        <member name="T:Bookshelf.WebContract.Book.Response.GetBookByIdResponse">
+            <summary>
+            Response DTO containing single book.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Response.GetBookByIdResponse.Id">
+            <summary>
+            Book identifier.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Response.GetBookByIdResponse.Title">
+            <summary>
+            Book title.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Response.GetBookByIdResponse.Pages">
+            <summary>
+            No. of pages.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Response.GetBookByIdResponse.MaxLoanDays">
+            <summary>
+            Max loan days of the book. When null - no restriction.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Response.GetBookByIdResponse.AuthorId">
+            <summary>
+            Book's author identifier.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Book.Response.GetBookByIdResponse.BookTags">
+            <summary>
+            Tags assigned to book. <see cref="T:Bookshelf.WebContract.BookTag.Response.BookTagResponse"/>
             </summary>
         </member>
     </members>
