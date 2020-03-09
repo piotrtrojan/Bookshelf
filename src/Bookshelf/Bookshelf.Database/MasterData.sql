@@ -10,4 +10,5 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
+:r .\MasterData\Nationalities.sql
 :r .\MasterData\Users.sql

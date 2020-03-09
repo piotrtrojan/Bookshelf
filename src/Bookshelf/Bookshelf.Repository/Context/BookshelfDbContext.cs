@@ -31,7 +31,7 @@ namespace Bookshelf.Repository.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<BookTag>(eb =>
             {
-                eb.HasIndex(q => q.Value);
+                eb.HasIndex(q => q.Tag);
             });
         }
     }

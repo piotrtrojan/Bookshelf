@@ -24,5 +24,10 @@
         /// New user last name.
         /// </summary>
         public string LastName { get; set; }
+        
+        /// <summary>
+        /// New user nationality
+        /// </summary>
+        public string Nationality { get; set; }
     }
 }

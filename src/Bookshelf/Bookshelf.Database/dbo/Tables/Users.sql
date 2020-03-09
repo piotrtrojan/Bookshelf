@@ -9,7 +9,9 @@
     [LastName]         NVARCHAR (MAX)   NULL,
     [Email]            NVARCHAR (MAX)   NULL,
     [CardId]           INT              NOT NULL,
-    CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Id] ASC)
+	[NationalityId]    INT			    NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Id] ASC),
+	CONSTRAINT [FK_Users_Nationalities_Id] FOREIGN KEY ([NationalityId]) REFERENCES [Nationalities]([Id])
 );
 
 

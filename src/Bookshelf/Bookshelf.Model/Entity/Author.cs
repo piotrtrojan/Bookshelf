@@ -7,7 +7,8 @@ namespace Bookshelf.Model.Entity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Nationality { get; set; }
+        public Nationality Nationality { get; set; }
+        public int NationalityId { get; set; }
         public ICollection<Book> Books { get; set; }
     }
 }

@@ -6,8 +6,9 @@
     [DeletedAt]        DATETIME2 (7)  NULL,
     [FirstName]        NVARCHAR (MAX) NULL,
     [LastName]         NVARCHAR (MAX) NULL,
-    [Nationality]      NVARCHAR (MAX) NULL,
-    CONSTRAINT [PK_Authors] PRIMARY KEY CLUSTERED ([Id] ASC)
+    [NationalityId]    INT			  NOT NULL,
+    CONSTRAINT [PK_Authors] PRIMARY KEY CLUSTERED ([Id] ASC), 
+    CONSTRAINT [FK_Authors_Nationalities_Id] FOREIGN KEY ([NationalityId]) REFERENCES [Nationalities]([Id])
 );
 
 

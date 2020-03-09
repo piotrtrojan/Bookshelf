@@ -68,10 +68,12 @@
     <Build Include="dbo\Tables\Pieces.sql" />
     <Build Include="dbo\Tables\Loans.sql" />
     <Build Include="dbo\Tables\BookTags.sql" />
+    <Build Include="dbo\Tables\Nationalities.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MasterData\Users.sql" />
     <None Include="LocalDb.publish.xml" />
+    <None Include="MasterData\Nationalities.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="MasterData.sql" />

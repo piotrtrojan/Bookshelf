@@ -4,6 +4,7 @@
     {
         public const string GetBookById = @"
             SELECT
+                b.Id,
                 b.AuthorId,                
                 b.Title,
                 b.Pages,

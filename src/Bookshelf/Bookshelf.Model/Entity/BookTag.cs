@@ -10,6 +10,6 @@ namespace Bookshelf.Model.Entity
         public int Id { get; set; }
         public Book Book { get; set; }
         public int BookId { get; set; }
-        public string Value { get; set; }
+        public string Tag { get; set; }
     }
 }

@@ -7,7 +7,7 @@
                 a.Id,
                 a.FirstName,
                 a.LastName,
-                a.Nationality
+                a.NationalityId
             FROM Authors a
         ";
     }

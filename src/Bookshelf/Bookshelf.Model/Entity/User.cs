@@ -11,6 +11,8 @@ namespace Bookshelf.Model.Entity
         public string LastName { get; set; }
         public string Email { get; set; }
         public int CardId { get; set; }
+        public Nationality Nationality { get; set; }
+        public int NationalityId { get; set; }
         public ICollection<Loan> Loans { get; set; }
         public ICollection<Reservation> Reservations { get; set; }
 
