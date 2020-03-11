@@ -1,13 +1,10 @@
 ﻿using Bookshelf.Application.Book.Query;
-using Bookshelf.Contract;
 using Bookshelf.Contract.Base;
 using Bookshelf.Repository.Context;
 using Bookshelf.Utils;
-using Bookshelf.Utils.Extensions;
 using Bookshelf.WebContract.Book.Response;
 using Bookshelf.WebContract.BookTag.Response;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq;
 
 namespace Bookshelf.Application.Book.QueryHandler

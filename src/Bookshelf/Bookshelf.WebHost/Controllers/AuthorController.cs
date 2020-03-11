@@ -1,5 +1,4 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Bookshelf.Application.Author.Command;
 using Bookshelf.Application.Author.Query;
 using Bookshelf.Application.Book.Query;
