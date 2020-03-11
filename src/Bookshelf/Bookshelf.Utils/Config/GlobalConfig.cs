@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 
-namespace Bookshelf.Utils
+namespace Bookshelf.Utils.Config
 {
     public class GlobalConfig
     {
@@ -13,6 +13,7 @@ namespace Bookshelf.Utils
         public string JwtIssuer { get; private set; }
         public string JwtAudience { get; private set; }
         public bool AddSwagger { get; private set; }
+        public int MaxPageSize { get; set; } // TODO: Move to separated config.
 
         public GlobalConfig(IConfiguration configuration)
         {
@@ -37,6 +38,8 @@ namespace Bookshelf.Utils
                 throw new ArgumentException("JwtAudience is empty");
             if (string.IsNullOrEmpty(configuration["AddSwagger"]) || !bool.TryParse(configuration["AddSwagger"], out bool addSwagger))
                 throw new ArgumentException("AddSwagger is empty");
+            if (string.IsNullOrEmpty(configuration["MaxPageSize"]) || !int.TryParse(configuration["MaxPageSize"], out int maxPageSize))
+                throw new ArgumentException("MaxPageSize is empty");
 
             CommandConnectionString = configuration["CommandConnectionString"];
             QueryConnectionString = configuration["QueryConnectionString"];
@@ -46,6 +49,7 @@ namespace Bookshelf.Utils
             JwtIssuer = configuration["JwtIssuer"];
             JwtAudience = configuration["JwtAudience"];
             AddSwagger = addSwagger;
+            MaxPageSize = maxPageSize;
         }
     }
 }

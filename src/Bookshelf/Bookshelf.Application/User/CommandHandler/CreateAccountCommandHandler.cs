@@ -1,7 +1,7 @@
 ﻿using Bookshelf.Application.User.Command;
 using Bookshelf.Contract.Base;
 using Bookshelf.Repository.Context;
-using Bookshelf.Utils;
+using Bookshelf.Utils.Config;
 using System;
 
 namespace Bookshelf.Application.User.CommandHandler

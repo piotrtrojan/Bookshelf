@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Bookshelf.Application.Book.Command;
 using Bookshelf.Application.Book.Query;
+using Bookshelf.Application.Piece.Query;
 using Bookshelf.Authorization.Attribute;
 using Bookshelf.Authorization.Enum;
 using Bookshelf.Utils;
@@ -48,6 +49,18 @@ namespace Bookshelf.WebHost.Controllers
         public IActionResult GetBookById(int bookId)
         {
             return HandleQueryResult(appExecutor.Dispatch(new GetBookByIdQuery { BookId = bookId }));
+        }
+
+        /// <summary>
+        /// Returns list of pieces for a book.
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
+        [HttpGet("{bookId}/Pieces")]
+        [RoleAuthorize(RoleType.Account)]
+        public IActionResult GetPiecesByBookId(int bookId)
+        {
+            return HandleQueryResult(appExecutor.Dispatch(new GetPiecesByBookIdQuery { BookId = bookId })); // TODO: Consider using pagination query here.
         }
     }
 }

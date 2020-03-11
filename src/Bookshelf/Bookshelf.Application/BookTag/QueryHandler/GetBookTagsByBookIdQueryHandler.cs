@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Bookshelf.Application.BookTag.Query;
 using Bookshelf.Contract.Base;
-using Bookshelf.Utils;
+using Bookshelf.Utils.Config;
 using Bookshelf.WebContract.BookTag.Response;
 using Dapper;
 using Microsoft.Data.SqlClient;

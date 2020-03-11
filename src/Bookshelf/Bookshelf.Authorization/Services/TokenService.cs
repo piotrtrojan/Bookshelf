@@ -1,7 +1,7 @@
 ﻿using Bookshelf.Authorization.Exceptions;
 using Bookshelf.Authorization.Identity;
 using Bookshelf.Authorization.Interfaces;
-using Bookshelf.Utils;
+using Bookshelf.Utils.Config;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;

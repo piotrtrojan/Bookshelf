@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bookshelf.Application\Bookshelf.Application.csproj" />
     <ProjectReference Include="..\Bookshelf.Utils\Bookshelf.Utils.csproj" />
     <ProjectReference Include="..\Bookshelf.WebContract\Bookshelf.WebContract.csproj" />
   </ItemGroup>

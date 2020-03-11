@@ -3,7 +3,7 @@ using Bookshelf.Application.Author.Command;
 using Bookshelf.Application.Nationality.Query;
 using Bookshelf.Contract.Base;
 using Bookshelf.Repository.Context;
-using Bookshelf.Utils;
+using Bookshelf.Utils.Config;
 
 namespace Bookshelf.Application.Author.CommandHandler
 {

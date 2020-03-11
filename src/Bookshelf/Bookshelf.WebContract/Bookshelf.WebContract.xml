@@ -94,6 +94,31 @@
             New user nationality
             </summary>
         </member>
+        <member name="T:Bookshelf.WebContract.Base.BasePagedAndSortedRequest">
+            <summary>
+            DTO for all requests with sorting and paging.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Base.BasePagedAndSortedRequest.OrderBy">
+            <summary>
+            Response field to order by.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Base.BasePagedAndSortedRequest.Order">
+            <summary>
+            Order type - Ascending or Descending
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Base.BasePagedAndSortedRequest.Limit">
+            <summary>
+            Maximum elements to return.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Base.BasePagedAndSortedRequest.Page">
+            <summary>
+            Page to return. E.g. When querying 3rd page with limit 10, response contains records 21-30.
+            </summary>
+        </member>
         <member name="T:Bookshelf.WebContract.BookTag.Response.BookTagResponse">
             <summary>
             Response DTO containing tag name and it's id.
@@ -139,6 +164,11 @@
             List of tags to be added to the new book.
             </summary>
         </member>
+        <member name="T:Bookshelf.WebContract.Book.Request.GetBooksByAuthorRequest">
+            <summary>
+            Request DTO for getting books connected with author. Contains sorting and Paging.
+            </summary>
+        </member>
         <member name="T:Bookshelf.WebContract.Book.Response.GetBookByIdResponse">
             <summary>
             Response DTO containing single book.
@@ -172,6 +202,36 @@
         <member name="P:Bookshelf.WebContract.Book.Response.GetBookByIdResponse.BookTags">
             <summary>
             Tags assigned to book. <see cref="T:Bookshelf.WebContract.BookTag.Response.BookTagResponse"/>
+            </summary>
+        </member>
+        <member name="T:Bookshelf.WebContract.Piece.Response.BookPiecesResponse">
+            <summary>
+            Response DTO for particular book piece.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Piece.Response.BookPiecesResponse.Id">
+            <summary>
+            Piece id.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Piece.Response.BookPiecesResponse.BookId">
+            <summary>
+            Book id.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Piece.Response.BookPiecesResponse.Barcode">
+            <summary>
+            Piece barcode.
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Piece.Response.BookPiecesResponse.Status">
+            <summary>
+            Piece status. <seealso cref="T:Bookshelf.Model.Enum.PieceStatus"/>
+            </summary>
+        </member>
+        <member name="P:Bookshelf.WebContract.Piece.Response.BookPiecesResponse.MaxLoanDays">
+            <summary>
+            Max number of days that book can be loaned.
             </summary>
         </member>
     </members>

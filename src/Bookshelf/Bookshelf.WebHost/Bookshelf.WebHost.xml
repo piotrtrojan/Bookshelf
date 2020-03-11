@@ -215,7 +215,7 @@
             </summary>
             <param name="services"></param>
         </member>
-        <member name="M:Bookshelf.WebHost.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Bookshelf.Utils.GlobalConfig,Microsoft.AspNetCore.Mvc.Infrastructure.IActionDescriptorCollectionProvider)">
+        <member name="M:Bookshelf.WebHost.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Bookshelf.Utils.Config.GlobalConfig,Microsoft.AspNetCore.Mvc.Infrastructure.IActionDescriptorCollectionProvider)">
             <summary>
             This method gets called by the runtime.
             Configures HTTP request pipeline.

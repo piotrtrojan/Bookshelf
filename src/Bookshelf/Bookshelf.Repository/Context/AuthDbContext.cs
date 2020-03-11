@@ -1,5 +1,5 @@
 ﻿using Bookshelf.Authorization.Identity;
-using Bookshelf.Utils;
+using Bookshelf.Utils.Config;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

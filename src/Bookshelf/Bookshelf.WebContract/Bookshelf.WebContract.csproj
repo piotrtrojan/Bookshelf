@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bookshelf.Contract\Bookshelf.Contract.csproj" />
+    <ProjectReference Include="..\Bookshelf.Model\Bookshelf.Model.csproj" />
   </ItemGroup>
 
 </Project>

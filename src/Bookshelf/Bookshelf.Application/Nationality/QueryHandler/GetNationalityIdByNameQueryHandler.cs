@@ -1,6 +1,6 @@
 using Bookshelf.Application.Nationality.Query;
 using Bookshelf.Contract.Base;
-using Bookshelf.Utils;
+using Bookshelf.Utils.Config;
 using Dapper;
 using Microsoft.Data.SqlClient;
 

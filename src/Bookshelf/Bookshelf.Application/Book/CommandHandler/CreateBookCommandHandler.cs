@@ -3,7 +3,7 @@ using AutoMapper;
 using Bookshelf.Application.Book.Command;
 using Bookshelf.Contract.Base;
 using Bookshelf.Repository.Context;
-using Bookshelf.Utils;
+using Bookshelf.Utils.Config;
 using System.Collections.Generic;
 
 namespace Bookshelf.Application.Book.CommandHandler
