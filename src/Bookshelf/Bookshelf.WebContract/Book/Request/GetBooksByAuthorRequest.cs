@@ -1,7 +1,8 @@
+using Bookshelf.WebContract.Base;
+
 namespace Bookshelf.WebContract.Book.Request
 {
-    public class GetBooksByAuthorRequest
+    public class GetBooksByAuthorRequest : BasePagedAndSortedRequest
     {
-    // TODO: Fill DTO.       
     }
 }

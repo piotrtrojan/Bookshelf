@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Bookshelf.Application.Author.Command;
 using Bookshelf.Application.Book.Command;
+using Bookshelf.Application.Book.Query;
 using Bookshelf.Application.User.Command;
 using Bookshelf.WebContract.Auth.Request;
 using Bookshelf.WebContract.Author.Request;
@@ -31,6 +32,7 @@ namespace Bookshelf.Application
             CreateMap<CreateBookRequest, CreateBookCommand>();
             CreateMap<CreateBookCommand, Model.Entity.Book>()
                 .ForMember(q => q.BookTags, opt => opt.Ignore());
+            CreateMap<GetBooksByAuthorRequest, GetBooksByAuthorQuery>();
         }
 
         private void RegisterAuthor()
