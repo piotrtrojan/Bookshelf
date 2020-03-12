@@ -60,7 +60,7 @@ namespace Bookshelf.WebHost.Controllers
         [RoleAuthorize(RoleType.Account)]
         public IActionResult GetPiecesByBookId(int bookId)
         {
-            return HandleQueryResult(appExecutor.Dispatch(new GetPiecesByBookIdQuery { BookId = bookId })); // TODO: Consider using pagination query here.
+        return HandleQueryResult(appExecutor.Dispatch(new GetPiecesByBookIdQuery { BookId = bookId })); // TODO: Consider using pagination query here.
         }
     }
 }

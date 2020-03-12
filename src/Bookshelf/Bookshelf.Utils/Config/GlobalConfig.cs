@@ -13,7 +13,8 @@ namespace Bookshelf.Utils.Config
         public string JwtIssuer { get; private set; }
         public string JwtAudience { get; private set; }
         public bool AddSwagger { get; private set; }
-        public int MaxPageSize { get; set; } // TODO: Move to separated config.
+
+        private const string GlobalConfigPrefix = "GlobalConfig:";
 
         public GlobalConfig(IConfiguration configuration)
         {
@@ -22,34 +23,33 @@ namespace Bookshelf.Utils.Config
 
         private void SetFields(IConfiguration configuration)
         {
-            if (string.IsNullOrEmpty(configuration["CommandConnectionString"]))
+            if (string.IsNullOrEmpty(configuration[$"{GlobalConfigPrefix}CommandConnectionString"]))
                 throw new ArgumentException("CommandConnectionString is empty");
-            if (string.IsNullOrEmpty(configuration["QueryConnectionString"]))
+            if (string.IsNullOrEmpty(configuration[$"{GlobalConfigPrefix}QueryConnectionString"]))
                 throw new ArgumentException("QueryConnectionString is empty");
-            if (string.IsNullOrEmpty(configuration["IdentityConnectionString"]))
+            if (string.IsNullOrEmpty(configuration[$"{GlobalConfigPrefix}IdentityConnectionString"]))
                 throw new ArgumentException("IdentityConnectionString empty");
-            if (string.IsNullOrEmpty(configuration["JwtKey"]))
+            if (string.IsNullOrEmpty(configuration[$"{GlobalConfigPrefix}JwtKey"]))
                 throw new ArgumentException("JwtKey is empty");
-            if (string.IsNullOrEmpty(configuration["JwtExpireDays"]) || !int.TryParse(configuration["JwtExpireDays"], out int jwtExpireDays))
+            if (string.IsNullOrEmpty(configuration[$"{GlobalConfigPrefix}JwtExpireDays"])
+                || !int.TryParse(configuration[$"{GlobalConfigPrefix}JwtExpireDays"], out int jwtExpireDays))
                 throw new ArgumentException("JwtExpireDays is empty");
-            if (string.IsNullOrEmpty(configuration["JwtIssuer"]))
+            if (string.IsNullOrEmpty(configuration[$"{GlobalConfigPrefix}JwtIssuer"]))
                 throw new ArgumentException("JwtIssuer is empty");
-            if (string.IsNullOrEmpty(configuration["JwtAudience"]))
+            if (string.IsNullOrEmpty(configuration[$"{GlobalConfigPrefix}JwtAudience"]))
                 throw new ArgumentException("JwtAudience is empty");
-            if (string.IsNullOrEmpty(configuration["AddSwagger"]) || !bool.TryParse(configuration["AddSwagger"], out bool addSwagger))
+            if (string.IsNullOrEmpty(configuration[$"{GlobalConfigPrefix}AddSwagger"])
+                || !bool.TryParse(configuration[$"{GlobalConfigPrefix}AddSwagger"], out bool addSwagger))
                 throw new ArgumentException("AddSwagger is empty");
-            if (string.IsNullOrEmpty(configuration["MaxPageSize"]) || !int.TryParse(configuration["MaxPageSize"], out int maxPageSize))
-                throw new ArgumentException("MaxPageSize is empty");
 
-            CommandConnectionString = configuration["CommandConnectionString"];
-            QueryConnectionString = configuration["QueryConnectionString"];
-            IdentityConnectionString = configuration["IdentityConnectionString"];
-            JwtKey = configuration["JwtKey"];
+            CommandConnectionString = configuration[$"{GlobalConfigPrefix}CommandConnectionString"];
+            QueryConnectionString = configuration[$"{GlobalConfigPrefix}QueryConnectionString"];
+            IdentityConnectionString = configuration[$"{GlobalConfigPrefix}IdentityConnectionString"];
+            JwtKey = configuration[$"{GlobalConfigPrefix}JwtKey"];
             JwtExpireDays = jwtExpireDays;
-            JwtIssuer = configuration["JwtIssuer"];
-            JwtAudience = configuration["JwtAudience"];
+            JwtIssuer = configuration[$"{GlobalConfigPrefix}JwtIssuer"];
+            JwtAudience = configuration[$"{GlobalConfigPrefix}JwtAudience"];
             AddSwagger = addSwagger;
-            MaxPageSize = maxPageSize;
         }
     }
 }

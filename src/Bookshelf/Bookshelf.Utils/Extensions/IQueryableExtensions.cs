@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using Bookshelf.Contract;
 using Bookshelf.Contract.Enum;
 
@@ -26,23 +27,24 @@ namespace Bookshelf.Utils.Extensions
 
         public static IQueryable<T> OrderBy<T>(this IQueryable<T> source, string ordering, params object[] values)
         {
-            var type = typeof(T);
-            var property = type.GetProperty(ordering);
-            var parameter = Expression.Parameter(type, "p");
-            var propertyAccess = Expression.MakeMemberAccess(parameter, property);
-            var orderByExp = Expression.Lambda(propertyAccess, parameter);
-            MethodCallExpression resultExp = Expression.Call(typeof(Queryable), "OrderBy", new Type[] { type, property.PropertyType }, source.Expression, Expression.Quote(orderByExp));
-            return source.Provider.CreateQuery<T>(resultExp);
+            return OrderByInternal<T>(source, ordering, true, values);
         }
 
         public static IQueryable<T> OrderByDescending<T>(this IQueryable<T> source, string ordering, params object[] values)
         {
+            return OrderByInternal<T>(source, ordering, false, values);
+        }
+
+        internal static IQueryable<T> OrderByInternal<T>(this IQueryable<T> source, string ordering, bool ascending, params object[] values)
+        {
             var type = typeof(T);
-            var property = type.GetProperty(ordering);
+            var property = type.GetProperty(ordering, BindingFlags.IgnoreCase |  BindingFlags.Public | BindingFlags.Instance);
             var parameter = Expression.Parameter(type, "p");
             var propertyAccess = Expression.MakeMemberAccess(parameter, property);
             var orderByExp = Expression.Lambda(propertyAccess, parameter);
-            MethodCallExpression resultExp = Expression.Call(typeof(Queryable), "OrderByDescending", new Type[] { type, property.PropertyType }, source.Expression, Expression.Quote(orderByExp));
+            MethodCallExpression resultExp = ascending ? 
+                Expression.Call(typeof(Queryable), "OrderBy", new Type[] { type, property.PropertyType }, source.Expression, Expression.Quote(orderByExp)) : 
+                Expression.Call(typeof(Queryable), "OrderByDescending", new Type[] { type, property.PropertyType }, source.Expression, Expression.Quote(orderByExp));
             return source.Provider.CreateQuery<T>(resultExp);
         }
     }

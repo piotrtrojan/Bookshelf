@@ -76,6 +76,9 @@ namespace Bookshelf.WebHost
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
+            // Resolve global config to read some parameters.
+            var sp = services.BuildServiceProvider();
+            var globalConfig = sp.GetService<GlobalConfig>();
             services
                 .AddAuthentication(x =>
                 {
@@ -90,12 +93,12 @@ namespace Bookshelf.WebHost
                     cfg.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateAudience = false,
-                        ValidAudience = Configuration["JwtAudience"],
+                        ValidAudience = globalConfig.JwtAudience,
                         ValidateIssuer = false,
-                        ValidIssuer = Configuration["JwtIssuer"],
+                        ValidIssuer = globalConfig.JwtIssuer,
                         ValidateLifetime = false,
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"]))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(globalConfig.JwtKey))
                     };
                 });
 
