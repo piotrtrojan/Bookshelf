@@ -1,4 +1,5 @@
-﻿using Bookshelf.Validator.Shared;
+﻿using Bookshelf.Validator.Auth;
+using Bookshelf.Validator.Shared;
 using Bookshelf.Validator.Shared.Interfaces;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +13,7 @@ namespace Bookshelf.Validator
             RegisterSharedServices(services);
             services.AddMvc().AddFluentValidation(fv => {
                 fv.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
-                fv.RegisterValidatorsFromAssemblyContaining<NationalityValidator>(); //TODO: Consider better approach. Maybe move to Validator project?
+                fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>();
             });
         }
 
@@ -20,6 +21,7 @@ namespace Bookshelf.Validator
         {
             services.AddTransient<INationalityValidator, NationalityValidator>();
             services.AddTransient<IAuthorValidator, AuthorValidator>();
+            services.AddTransient<IPieceValidator, PieceValidator>();
         }
     }
 }

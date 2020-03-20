@@ -10,7 +10,7 @@
                 p.Status
             FROM Pieces p
             WHERE p.IsActive = 1 
-                AND p.BookId = '{0}'";
+                AND p.BookId = {0}";
 
         public const string GetMaxLoanDaysByPieceId = @"
             SELECT p.MaxLoanDays
@@ -18,5 +18,17 @@
             WHERE p.IsActive = 1
                 AND p.Id = {0} 
         ";
+
+        public const string GetPieceStatusByPieceId = @"
+            SELECT p.Status
+            FROM Pieces p
+            WHERE p.IsActive = 1
+                AND p.Id = {0}";
+
+        public const string DoesPieceExistByPieceId = @"
+            SELECT Count(1)
+            FROM Pieces p
+            WHERE p.IsActive = 1
+                AND p.Id = {0}";
     }
 }

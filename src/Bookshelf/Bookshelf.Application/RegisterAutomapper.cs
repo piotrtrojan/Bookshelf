@@ -4,11 +4,13 @@ using Bookshelf.Application.Author.Command;
 using Bookshelf.Application.Book.Command;
 using Bookshelf.Application.Book.Query;
 using Bookshelf.Application.Piece.Command;
+using Bookshelf.Application.Reservation.Command;
 using Bookshelf.Application.User.Command;
 using Bookshelf.WebContract.Auth.Request;
 using Bookshelf.WebContract.Author.Request;
 using Bookshelf.WebContract.Book.Request;
 using Bookshelf.WebContract.Piece.Request;
+using Bookshelf.WebContract.Reservation.Request;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Bookshelf.Application
@@ -29,6 +31,12 @@ namespace Bookshelf.Application
             RegisterAuthor();
             RegisterBook();
             RegisterPiece();
+            RegiterReservation();
+        }
+
+        private void RegiterReservation()
+        {
+            CreateMap<MakeOrderRequest, MakeOrderCommand>();
         }
 
         private void RegisterPiece()

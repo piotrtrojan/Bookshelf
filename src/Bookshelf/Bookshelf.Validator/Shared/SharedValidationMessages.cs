@@ -2,6 +2,10 @@
 {
     internal static class SharedValidationMessages
     {
+        public static string PieceDoesNotExist => "Selected piece does not exists. ";
+        
+        public static string PieceNotAvailable => "Selected piece is not available. ";
+
         public static string InvalidNationality => "Invalid nationality. ";
 
         public static string AuthorNotFound => "Provided author does not exist. ";

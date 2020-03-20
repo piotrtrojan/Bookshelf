@@ -23,7 +23,7 @@ namespace Bookshelf.WebHost.Controllers
         /// <param name="appExecutor"></param>
         /// <param name="mapper"></param>
         public BookController(AppExecutor appExecutor, IMapper mapper) : base(appExecutor, mapper)
-        {}
+        { }
 
         /// <summary>
         /// Creates new book
@@ -60,7 +60,7 @@ namespace Bookshelf.WebHost.Controllers
         [RoleAuthorize(RoleType.Account)]
         public IActionResult GetPiecesByBookId(int bookId)
         {
-        return HandleQueryResult(appExecutor.Dispatch(new GetPiecesByBookIdQuery { BookId = bookId })); // TODO: Consider using pagination query here.
+            return HandleQueryResult(appExecutor.Dispatch(new GetPiecesByBookIdQuery { BookId = bookId })); // TODO: Consider using pagination query here.
         }
     }
 }
