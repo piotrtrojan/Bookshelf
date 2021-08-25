@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="MicroElements.Swashbuckle.FluentValidation" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.18" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
